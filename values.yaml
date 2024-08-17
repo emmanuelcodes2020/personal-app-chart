@@ -1,0 +1,6 @@
+devnamespace: dev
+personalApplicationName: personal-app
+personalservice: personal-app-service
+personalimage: 
+  name: 416591745024.dkr.ecr.eu-west-2.amazonaws.com/personal-demo/personal-app
+  tag: "latest"
