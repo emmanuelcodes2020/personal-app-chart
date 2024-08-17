@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.personalApplicationName }}
+  namespace: {{ .Values.devnamespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.personalApplicationName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.personalApplicationName }}
+    spec:
+      containers:
+      - name: {{ .Values.personalApplicationName }}
+        image: "{{ .Values.personalimage.name  }}:{{ .Values.personalimage.tag }}"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
